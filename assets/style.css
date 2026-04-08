@@ -1,0 +1,370 @@
+@font-face {
+    font-family: 'Recoleta';
+    src: url('./Recoleta-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  :root {
+    --sage: #7B8579;
+    --sage-dark: #5B685A;
+    --sage-light: #E8EBE7;
+    --cream: #F2EEE6;
+    --text: #2D2D2D;
+    --text-secondary: #666;
+    --border: #E5E5E5;
+    --sidebar-width: 240px;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+    background: #fff;
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* ===== LAYOUT ===== */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    width: var(--sidebar-width);
+    border-right: 1px solid var(--border);
+    padding: 24px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    text-decoration: none;
+  }
+  .sidebar-logo img { height: 28px; }
+  .sidebar-logo span {
+    font-family: 'Recoleta', Georgia, serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text);
+  }
+  
+  .sidebar-section {
+    margin-bottom: 24px;
+  }
+  .sidebar-section-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--sage);
+    margin-bottom: 8px;
+  }
+  
+  .sidebar nav a {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    line-height: 1.5;
+  }
+  .sidebar nav a:hover {
+    color: var(--text);
+    background: var(--cream);
+  }
+  .sidebar nav a.active {
+    color: var(--sage-dark);
+    background: var(--sage-light);
+    font-weight: 600;
+  }
+  
+  /* ===== MAIN CONTENT ===== */
+  .main {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    max-width: 720px;
+    padding: 48px 40px 64px;
+  }
+  
+  /* ===== TYPOGRAPHY ===== */
+  h1 {
+    font-family: 'Recoleta', Georgia, serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  
+  h2 {
+    font-family: 'Recoleta', Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+  
+  p { margin-bottom: 12px; }
+  
+  p.page-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  
+  p.section-desc {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+  
+  .breadcrumb {
+    font-size: 13px;
+    color: var(--sage);
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  
+  /* ===== SECTIONS ===== */
+  section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section:first-of-type { padding-top: 0; }
+  section:last-of-type { border-bottom: none; }
+  
+  /* ===== TIER HEADINGS ===== */
+  .tier-heading { margin-bottom: 24px; }
+  .tier-heading h2 { margin-bottom: 4px; }
+  .tier-heading .tier-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+  }
+  
+  /* ===== PILLS ===== */
+  .pill {
+    display: inline-block;
+    background: var(--sage-dark);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.01em;
+  }
+  
+  /* ===== CATEGORY LABELS ===== */
+  .category-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-top: 28px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--sage-light);
+  }
+  
+  /* ===== PRODUCTS ===== */
+  .product { padding: 8px 0; }
+  .product-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .product-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .product-price {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--sage);
+    background: var(--sage-light);
+    padding: 3px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .product-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+  
+  /* ===== TIER TOTAL ===== */
+  .tier-total {
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 2px solid var(--sage-light);
+    font-weight: 600;
+    color: var(--sage);
+    font-size: 14px;
+  }
+  
+  /* ===== NUMBERED ITEMS (rules, steps) ===== */
+  .rule-item, .step {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .rule-num, .step-num {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--sage);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--sage);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .rule-item strong { color: var(--text); }
+  .rule-item span, .step-text span {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .step { padding: 10px 0; }
+  .step-text strong { display: block; font-size: 14px; margin-bottom: 2px; }
+  .step-text span { font-size: 13px; color: var(--text-secondary); }
+  
+  /* ===== BULLET LISTS ===== */
+  ul.tips { list-style: none; margin-bottom: 24px; }
+  ul.tips li {
+    padding: 3px 0;
+    padding-left: 16px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  ul.tips li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+  
+  /* ===== TABLES ===== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    font-size: 13px;
+  }
+  thead th {
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--sage);
+    padding: 8px 12px 8px 0;
+    border-bottom: 2px solid var(--sage-light);
+  }
+  tbody td {
+    padding: 8px 12px 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  .tag-free {
+    display: inline-block;
+    background: var(--sage-light);
+    color: var(--sage);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+  
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+  }
+  footer p { font-size: 13px; color: var(--text-secondary); }
+  
+  /* ===== HOME PAGE CARDS ===== */
+  .docs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .doc-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .doc-card:hover {
+    border-color: var(--sage);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .doc-card h3 {
+    font-family: 'Recoleta', Georgia, serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .doc-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+    .main {
+      margin-left: 0;
+      padding: 32px 20px 48px;
+    }
+    .docs-grid {
+      grid-template-columns: 1fr;
+    }
+    .product-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  }
+  
+  @media print {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    section { padding: 24px 0; }
+  }
