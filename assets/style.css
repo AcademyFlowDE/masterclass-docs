@@ -215,6 +215,18 @@
     margin-top: 2px;
     line-height: 1.5;
   }
+  .product-links {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+  .product-links a {
+    color: var(--link);
+    text-decoration: none;
+  }
+  .product-links a:hover { text-decoration: underline; }
   
   /* ===== TIER TOTAL ===== */
   .tier-total {
